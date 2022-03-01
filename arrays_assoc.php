@@ -26,5 +26,30 @@
         echo $names['first_name'] . " " . $names['last_name'];
     ?>
 
+    <?php 
+
+        //step 1
+        echo "<br>" . "<br>";
+        $number1 = 6;
+        $number2 = 20;         
+        
+        //step 2
+        echo $number1; 
+        echo "<br>";
+        echo $number2;        
+        echo "<br>";
+        echo $number1 + $number2 . "<br>";
+
+        echo "<br>";
+
+        //step 3
+        $numberList = array("Marko Polo", "Cat", "Bob");
+        $numberListAssoc = array("first_name" => 'Burus', "last_name" => 'Lee');
+
+        echo $numberList[1];
+        echo "<br>";
+        echo $numberListAssoc['first_name'] . " " . $numberListAssoc['last_name'];
+    ?>
+
 </body>
 </html>
