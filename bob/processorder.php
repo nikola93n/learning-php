@@ -26,6 +26,8 @@
   $sparkqty = $_POST['sparkqty'];
 
   echo $tireqty;
+  echo $oilqty;
+  echo $sparkqty;
 ?>
 </body>
 
