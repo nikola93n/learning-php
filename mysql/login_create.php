@@ -12,11 +12,13 @@
         }
         
         $query = "INSERT INTO users(username, password)";
-        $query .= "VALUES ('$username')";
+        $query .= "VALUES ('$username', '$password')";
 
         $result = mysqli_query($connection, $query);
 
-       
+         if(!$result) {
+             die('Query FAILED' . mysqli_error());
+         }
        
        
        
@@ -68,7 +70,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-6">
-                <form action="form_create.php" method="post">
+                <form action="login_create.php" method="post">
                     <div class="form-gruop">
                         <label for="username">Username</label>
                         <input type="text" name="username" class="form-control">
