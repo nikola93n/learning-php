@@ -1,55 +1,7 @@
 <?php  
-    if(isset($_POST['submit'])){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-
-        $connection = mysqli_connect('localhost', 'root', '', 'loginapp');
-
-        if($connection){
-            echo "We are connected";
-        } else {
-            die("Database connection failed");
-        }
-        
-        $query = "INSERT INTO users(username, password)";
-        $query .= "VALUES ('$username', '$password')";
-
-        $result = mysqli_query($connection, $query);
-
-         if(!$result) {
-             die('Query FAILED' . mysqli_error());
-         }
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-        // if($username && $password){     
-        //     echo $username . "<br>";
-        //     echo $password;
-        // } else {
-        //     echo "this field cannot be blank";
-        // }
-
-
-        
-    }
+include "db.php";
+include "functions.php";
+createRows(); 
 ?>
 
 
@@ -70,16 +22,17 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-6">
+                <h1 class="text-center">Create</h1>
                 <form action="login_create.php" method="post">
-                    <div class="form-gruop">
+                    <div class="form-gruop mb-3">
                         <label for="username">Username</label>
                         <input type="text" name="username" class="form-control">
                     </div>
-                    <div class="form-gruop">
+                    <div class="form-gruop mb-4">
                         <label for="password">Password</label>
                         <input type="password" name="password" class="form-control">
                     </div>
-                    <input class="btn btn-primary" type="submit" value="Submit" name="submit">
+                    <input class="btn btn-primary" type="submit" value="CREATE" name="submit">
                 </form>
             </div>
         </div>
