@@ -11,9 +11,10 @@ if(isset($_POST['submit'])){
     $query = "INSERT INTO users(username, password) VALUES ('$username', '$password')";
 
     $result = mysqli_query($connection, $query);
-
      if(!$result) {
          die('Query FAILED');
+     } else {
+         echo "Record Created";
      }
 
     }
@@ -36,6 +37,7 @@ if(isset($_POST['submit'])){
     }
 
     function UpdateTable() {
+        if(isset($_POST['submit'])) {
        global $connection;
        $username = $_POST['username'];
        $password = $_POST['password'];
@@ -45,10 +47,14 @@ if(isset($_POST['submit'])){
         $result = mysqli_query($connection, $query);
         if(!$result) {
             die("QUERY FAILED");
+        } else {
+            echo "Record Updated";
         }
+    }
     }
 
     function deleteRows() {
+        if(isset($_POST['submit'])) {
         global $connection;
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -61,7 +67,10 @@ if(isset($_POST['submit'])){
          $result = mysqli_query($connection, $query);
          if(!$result) {
              die("QUERY FAILED");
+         } else {
+             echo "Record Deleted";
          }
+        }
      }
     
 
